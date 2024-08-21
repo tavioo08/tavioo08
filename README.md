@@ -1,16 +1,33 @@
-## Hi there 👋
+let palavra;
 
-<!--
-**tavioo08/tavioo08** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
+function setup() {
+  createCanvas(400, 400);
+  
+  
+  let palavras = ["Otavio", "Augusto", "Oliveira"];
+  
+  palavra = random(palavras);
+}
 
-Here are some ideas to get you started:
+function inicializaCores() {
+  
+  background("rgb(7,7,7)");
+  fill("rgb(248,246,246)");
+  textSize(64);
+  textAlign(CENTER, CENTER);
+}
 
-- 🔭 I’m currently working on ...
-- 🌱 I’m currently learning ...
-- 👯 I’m looking to collaborate on ...
-- 🤔 I’m looking for help with ...
-- 💬 Ask me about ...
-- 📫 How to reach me: ...
-- 😄 Pronouns: ...
-- ⚡ Fun fact: ...
--->
+function draw() {
+  
+  inicializaCores();
+
+  let maximo = width;
+  let minimo = 0;
+  // mouseX, 0, width ==> 0, palavra.length
+  
+  let quantidade = map(mouseX, 0, width, 1, palavra.length);
+  //console.log(quantidade);
+  let parcial = palavra.substring(0, quantidade);
+  text(parcial, 200, 200);
+  
+}
